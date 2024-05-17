@@ -290,14 +290,15 @@
 .article {
     display: flex;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .article img {
-    max-width: 200px;
+    max-width: 200px; /* Set a maximum width for the images */
+    height: auto; /* Maintain aspect ratio */
     margin-right: 20px;
 }
 
 .article-content {
     flex-grow: 1;
 }
-
