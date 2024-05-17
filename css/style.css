@@ -293,12 +293,19 @@
     width: 100%;
 }
 
+
 .article img {
-    max-width: 200px; /* Set a maximum width for the images */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 20px;
+  max-width: 200px; /* Set a maximum width for the images */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 20px;
+  object-fit: contain;  /* Use contain for better control on height */
 }
 
+@media (max-width: 768px) {  /* Targets screens less than 768px wide */
+  .article img {
+    height: 120px;  /* Set a fixed height for phones */
+  }
+}
 .article-content {
     flex-grow: 1;
 }
