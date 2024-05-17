@@ -291,14 +291,22 @@
     display: flex;
     margin-bottom: 20px;
     width: 100%;
+    overflow: hidden;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* Include transform for smooth scaling */
+}
+.article:hover {
+  background-color: #f5f5f5; /* Add a subtle background color change on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Add a slight hover shadow */
+  transform: scale(1.02); /* Increase size by 2% on hover */
 }
 
 
 .article img {
-  max-width: 200px; /* Set a maximum width for the images */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 200px; /* Existing Styles */
+  height: auto;
   margin-right: 20px;
-  object-fit: contain;  /* Use contain for better control on height */
+  object-fit: contain;
+  clip-path: inset(5px 0 0 0); /* Added property */
 }
 
 @media (max-width: 768px) {  /* Targets screens less than 768px wide */
