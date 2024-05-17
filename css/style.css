@@ -1,0 +1,270 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f9f9f9;
+  }
+  
+  /* Container */
+  .container {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  /* Header */
+  header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  header h1 a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  header nav {
+    float: right;
+    margin-top: 10px;
+  }
+  
+  header nav ul {
+    list-style: none;
+  }
+  
+  header nav ul li {
+    display: inline;
+    margin-left: 20px;
+  }
+  
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  header nav ul li a:hover {
+    color: #77aaff;
+  }
+  
+  /* Hero Section */
+  #hero {
+    background: #77aaff;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  #hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  #hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  
+  #hero .btn {
+    background: #fff;
+    color: #77aaff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  #hero .btn:hover {
+    background: #333;
+    color: #fff;
+  }
+  
+  /* Featured Articles Section */
+  #featured-articles {
+    padding: 50px 0;
+  }
+  
+  #featured-articles h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  #featured-articles .articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  #featured-articles article {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1;
+    max-width: 32%;
+    min-width: 300px;
+  }
+  
+  #featured-articles article img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  #featured-articles article h3 {
+    font-size: 24px;
+    margin: 20px;
+  }
+  
+  #featured-articles article p {
+    font-size: 16px;
+    margin: 20px;
+    color: #666;
+  }
+  
+  #featured-articles article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* About Section */
+  #about {
+    padding: 50px 0;
+    background: #f4f4f4;
+  }
+  
+  #about h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  #about p {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  /* Contact Section */
+  #contact {
+    padding: 50px 0;
+  }
+  
+  #contact h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  #contact form {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  #contact form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  #contact form input,
+  #contact form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #contact form button {
+    background: #77aaff;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  #contact form button:hover {
+    background: #333;
+  }
+  
+  /* Footer */
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+  }
+  
+  footer nav {
+    margin-top: 10px;
+  }
+  
+  footer nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer nav ul li {
+    display: inline;
+    margin-left: 20px;
+  }
+  
+  footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  footer nav ul li a:hover {
+    color: #77aaff;
+  }
+  
+  footer p {
+    margin: 10px 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header nav {
+      float: none;
+      text-align: center;
+    }
+  
+    header nav ul li {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    #featured-articles .articles {
+      flex-direction: column;
+    }
+  
+    #featured-articles article {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
