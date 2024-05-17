@@ -1,68 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Articles - Sugar Professor</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - Sugar Professor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1><a href="index.html">Sugar Professor</a></h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="article.html">Articles</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <header class="header">
+        <div class="container">
+            <h1><a href="index.html">Sugar Professor</a></h1>
+            <nav>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="article.html">Articles</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <section id="blog">
-    <div class="container">
-      <h2>Articles</h2>
-      <div id="articles-container"></div> </div>
-  </section>
+    <section id="blog">
+        <div class="container">
+            <h2>Articles</h2>
+            <div id="articles-container"></div>
+        </div>
+    </section>
 
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sugar Professor. All rights reserved.</p>
+            <nav>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
 
+    <script>
+        $(document).ready(function() {
+            // Fetch JSON data on page load
+            $.getJSON("data.json", function(data) {
+                // Loop through each article in the data
+                $.each(data, function(index, article) {
+                    // Create article elements dynamically
+                    var articleHTML = `
+                        <article class="article">
+                            <img src="${article.image}" alt="${article.title}">
+                            <div class="article-content">
+                                <h3><a href="${article.url}">${article.title}</a></h3>
+                                <p>${article.description}</p>
+                            </div>
+                        </article>`;
 
+                    // Append the article HTML to the container
+                    $("#articles-container").append(articleHTML);
+                });
+            });
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 Sugar Professor. All rights reserved.</p>
-      <nav>
-        <ul>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Service</a></li>
-        </ul>
-      </nav>
-    </div>
-  </footer>
-  <script>
-    $(document).ready(function() {
-      // Fetch JSON data on page load
-      $.getJSON("data.json", function(data) {
-        // Loop through each article in the data
-        $.each(data, function(index, article) {
-          // Create article elements dynamically
-          var articleHTML = `
-            <article class="article">
-              <img src="${article.image}" alt="${article.title}">
-              <div class="article-content">
-                <h3><a href="${article.url}">${article.title}</a></h3>
-                <p>${article.description}</p>
-              </div>
-            </article>`;
-
-          // Append the article HTML to the container
-          $("#articles-container").append(articleHTML);
+            // Toggle the navigation menu on mobile view
+            $(".nav-toggle").click(function() {
+                $("nav ul").toggleClass("showing");
+            });
         });
-      });
-    });
-  </script>
+    </script>
 </body>
 </html>

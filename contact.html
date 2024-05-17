@@ -7,19 +7,24 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
+  <header class="header">
     <div class="container">
-      <h1><a href="index.html">Sugar Professor</a></h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="article.html">Articles</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+        <h1><a href="index.html">Sugar Professor</a></h1>
+        <nav>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="article.html">Articles</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </div>
-  </header>
+</header>
 
   <section id="contact">
     <div class="container">
@@ -50,5 +55,16 @@
       </nav>
     </div>
   </footer>
+  <script src="js/scripts.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const navToggle = document.querySelector(".nav-toggle");
+    const navUl = document.querySelector("header nav ul");
+
+    navToggle.addEventListener("click", function() {
+      navUl.classList.toggle("showing");
+    });
+  });
+  </script>
 </body>
 </html>
