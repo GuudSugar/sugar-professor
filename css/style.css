@@ -285,35 +285,36 @@
   .articles {
     display: flex;
     flex-wrap: wrap;
-}
-
-.article {
+  }
+  
+  .article {
     display: flex;
     margin-bottom: 20px;
     width: 100%;
     overflow: hidden;
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* Include transform for smooth scaling */
-}
-.article:hover {
-  background-color: #f5f5f5; /* Add a subtle background color change on hover */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Add a slight hover shadow */
-  transform: scale(1.02); /* Increase size by 2% on hover */
-}
-
-
-.article img {
-  max-width: 200px; /* Existing Styles */
-  height: auto;
-  margin-right: 20px;
-  object-fit: contain;
-  clip-path: inset(5px 0 0 0); /* Added property */
-}
-
-@media (max-width: 768px) {  /* Targets screens less than 768px wide */
-  .article img {
-    height: 120px;  /* Set a fixed height for phones */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
   }
-}
-.article-content {
+  
+  .article:hover {
+    background-color: #f5f5f5; /* Add a subtle background color change on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Add a slight hover shadow */
+    transform: scale(1.02); /* Increase size by 2% on hover */
+  }
+  
+  .article img {
+    max-width: 200px; /* Existing Styles */
+    height: auto;
+    margin-right: 20px;
+    object-fit: contain;
+    clip-path: inset(5px 0 0 0); /* Added property */
+  }
+  
+  @media (max-width: 768px) { /* Targets screens less than 768px wide */
+    .article-content p { /* Target the paragraph element within .article-content */
+      display: none; /* Hide description on phones */
+    }
+  }
+  
+  .article-content {
     flex-grow: 1;
-}
+  }
