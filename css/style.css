@@ -59,11 +59,25 @@
   
   /* Hero Section */
   #hero {
-    background: #77aaff;
-    color: #fff;
+    background-image: url('https://i.imgur.com/2BN1yqW.jpeg');
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    color: #0c0808;
     padding: 100px 0;
     text-align: center;
-  }
+}
+
+#hero .hero-content {
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust opacity as needed */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#hero h2,
+#hero p {
+  text-shadow: 2px 2px 4px rgba(1, 2, 75, 0.5);
+}
   
   #hero h2 {
     font-size: 48px;
@@ -76,8 +90,8 @@
   }
   
   #hero .btn {
-    background: #fff;
-    color: #77aaff;
+    background: #000000;
+    color: #fcfdff;
     padding: 15px 30px;
     text-decoration: none;
     font-size: 16px;
@@ -86,7 +100,7 @@
   }
   
   #hero .btn:hover {
-    background: #333;
+    background: #575555;
     color: #fff;
   }
   
@@ -267,4 +281,23 @@
       margin-bottom: 20px;
     }
   }
-  
+
+  .articles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.article img {
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+.article-content {
+    flex-grow: 1;
+}
+
