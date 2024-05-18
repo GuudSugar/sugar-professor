@@ -8,7 +8,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #000000;
   background: #f9f9f9;
 }
 
@@ -22,7 +22,7 @@ body {
 
 /* Header */
 header {
-  background: rgba(37, 36, 36, 0.9); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.9); /* Semi-transparent background */
   color: #fff;
   padding: 10px 0;
   position: relative;
@@ -112,12 +112,13 @@ header nav ul li a:hover {
 }
 
 /* Hero Section */
+/*newspaper image: https://i.imgur.com/2BN1yqW.jpeg*/
 #hero {
-  background-image: url('https://i.imgur.com/2BN1yqW.jpeg');
-  background-size: cover;
-  background-position: center;
-  color: #0c0808;
-  padding: 100px 0;
+  background-image: url('https://i.imgur.com/MCxtJDZ.jpeg');
+  background-size: 460px;
+  background-position: 50% 50%;
+  color: #fffcfc;
+  padding: 50px 0;
   text-align: center;
 }
 
@@ -126,6 +127,23 @@ header nav ul li a:hover {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.outlined-text {
+  color: transparent; /* Hide the original text */
+  text-shadow: 
+    -3px -3px 0 white,
+    3px -3px 0 white,
+    -3px 3px 0 white,
+    3px 3px 0 white,
+    -6px -6px 0 white,
+    6px -6px 0 white,
+    -6px 6px 0 white,
+    6px 6px 0 white; /* Create a more amplified white outline */
+}
+@media only screen and (max-width: 768px) {
+  #hero {
+    background-size: auto; /* Adjust background size for mobile devices */
+  }
 }
 
 #hero h2,
@@ -150,12 +168,15 @@ header nav ul li a:hover {
   text-decoration: none;
   font-size: 16px;
   border-radius: 5px;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+  display: inline-block;
 }
 
 #hero .btn:hover {
-  background: #575555;
-  color: #fff;
+  background: #f3f3f3;
+  color: #050505;
+  border-color: #050505;
+  transform: scale(1.05);
 }
 
 /* Featured Articles Section */
@@ -373,7 +394,7 @@ footer p {
     max-width: 165px;
   }
   .article h3 {
-    color: red; /* Change the color to red */
+    color: rgb(202, 29, 29); /* Change the color to red */
     font-weight: bold; /* Make the title bold */
     font-size: 15px;
   }

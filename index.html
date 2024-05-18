@@ -11,6 +11,7 @@
   <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6qwWzEwUz625RqP6lSyLHZR5hcKPWWn9UBhzbKoFYiQ&s">
   <title>Sugar Professor - Home</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.min.js"></script>
 </head>
 <body>
   <!-- Header -->
@@ -46,27 +47,8 @@
   <section id="featured-articles">
     <div class="container">
       <h2>Featured Articles</h2>
-      <div class="articles">
-        <article>
-          <img src="https://the-ken.com/wp-content/uploads/2023/11/sugar_lede-1024x423.jpeg" alt="The bitter reality of no-added-sugar products">
-          <h3><a href="https://the-ken.com/story/the-bitter-reality-of-no-added-sugar-products/">The bitter reality of no-added-sugar products</a></h3>
-          <p>Brands like Noto and The Whole Truth promise guilt-free indulgence with foods made of sugar alternatives. But these are far from the healthy substitutes they are made out...</p>
-        </article>
-        <article>
-          <img src="https://images.indianexpress.com/2023/03/artificial-sweetners.jpg?w=640" alt="artificial-sweeteners-do-they-really-control-blood-sugar-levels">
-          <h3><a href="https://indianexpress.com/article/health-wellness/artificial-sweeteners-do-they-really-control-blood-sugar-levels-raise-the-risk-of-heart-attack-and-stroke-in-diabetics-8497636/">Artificial sweeteners: Do they really control blood sugar levels, raise the risk of heart attack and stroke in diabetics?</a></h3>
-          <p>‘Recent studies on their use have shown that they raise the risk of heart disease, stroke and cancers. That’s why I have revised my advisory too,’ says Dr Anoop Misra, Ch...</p>
-        </article>
-        <article>
-          <img src="https://images.indianexpress.com/2021/12/coffee-pexels.jpg?w=640" alt="sugar-in-tea-coffee">
-          <h3><a href="https://indianexpress.com/article/lifestyle/food-wine/sugar-in-tea-coffee-heres-why-you-shouldnt-7695211/">How bad can just 1 teaspoon of sugar in your daily cuppa be? Here’s the math</a></h3>
-          <p>"One of the creepiest, emptiest and utterly unhealthiest ways for calories to sneak in - sugar!", said Nutritionist Dr Pooja Makhija</p>
-        </article>
-        <article>
-          <img src="https://images.indianexpress.com/2023/04/bournvita.jpg?w=640" alt="sugar-in-tea-coffee">
-          <h3><a href="https://indianexpress.com/article/health-wellness/bournvita-sugar-health-powder-drinks-child-prone-to-diabetes-flavour-addicts-8561404/">Bournvita and sugar: Are health powder drinks making your child prone to diabetes and turning them into flavour addicts?</a></h3>
-          <p>All natural foods contain some form of sugar, be it fruits, vegetables, cereals and milk. These naturally-occurring sugars are enough to take care of our body needs and free sugars, such as processed and brown sugar, and added sugar can only overload your system, say paediatric endocrinologists.</p>
-        </article>
+      <div class="articles" id="articles-container">
+        <!-- Articles will be injected here by JavaScript -->
       </div>
     </div>
   </section>
@@ -87,13 +69,49 @@
   <script src="js/scripts.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-    const navToggle = document.querySelector(".nav-toggle");
-    const navUl = document.querySelector("header nav ul");
+      let currentPage = 1;
+      const articlesPerPage = 5;
 
-    navToggle.addEventListener("click", function() {
-      navUl.classList.toggle("showing");
+      const loadArticles = (page) => {
+        fetch('data.json')
+          .then(response => response.json())
+          .then(data => {
+            const articlesContainer = document.getElementById('articles-container');
+            const start = (page - 1) * articlesPerPage;
+            const end = page * articlesPerPage;
+            const articlesToLoad = data.slice(start, end);
+
+            articlesToLoad.forEach(article => {
+              const articleElement = document.createElement('article');
+              articleElement.innerHTML = `
+                <img src="${article.image}" alt="${article.title}">
+                <h3><a href="${article.url}">${article.title}</a></h3>
+                <p>${article.description}</p>
+              `;
+              articlesContainer.appendChild(articleElement);
+            });
+          })
+          .catch(error => console.error('Error fetching articles:', error));
+      };
+
+      const handleScroll = () => {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+          currentPage++;
+          loadArticles(currentPage);
+        }
+      };
+
+      loadArticles(currentPage);
+
+      window.addEventListener('scroll', handleScroll);
+
+      const navToggle = document.querySelector(".nav-toggle");
+      const navUl = document.querySelector("header nav ul");
+
+      navToggle.addEventListener("click", function() {
+        navUl.classList.toggle("showing");
+      });
     });
-  });
   </script>
 </body>
 </html>
