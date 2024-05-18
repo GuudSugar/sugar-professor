@@ -22,16 +22,18 @@ body {
 
 /* Header */
 header {
-  background: #333;
+  background: rgba(37, 36, 36, 0.9); /* Semi-transparent background */
   color: #fff;
   padding: 10px 0;
   position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 header h1 a {
   color: #fff;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 28px; /* Slightly larger font */
+  font-weight: 700; /* Bold font for a classy look */
 }
 
 header nav {
@@ -45,18 +47,20 @@ header nav ul {
 
 header nav ul li {
   display: inline;
-  margin-left: 15px;
+  margin-left: 20px; /* Increased spacing */
 }
 
 header nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s;
+  font-size: 16px; /* Larger font */
+  padding: 5px 10px; /* Padding for a better touch target */
+  transition: color 0.3s, background 0.3s;
 }
 
 header nav ul li a:hover {
   color: #77aaff;
+  background: rgba(255, 255, 255, 0.2); /* Subtle background change on hover */
 }
 
 /* Mobile Navigation */
@@ -83,7 +87,7 @@ header nav ul li a:hover {
       display: none;
       flex-direction: column;
       width: 100%;
-      background-color: #333;
+      background-color: rgba(51, 51, 51, 0.9);
   }
 
   header nav ul li {
@@ -351,25 +355,29 @@ footer p {
 }
 
 .article img {
-  max-width: 200px; /* Existing Styles */
+  max-width: 220px; /* Existing Styles */
   height: auto;
   margin-right: 20px;
   object-fit: contain;
   clip-path: inset(5px 0 0 0); /* Added property */
 }
 
-
 @media (max-width: 768px) { /* Targets screens less than 768px wide */
   .article-content p { /* Target the paragraph element within .article-content */
       display: none; /* Hide description on phones */
   }
   .article img {
-    max-width: 160px;
+    max-width: 165px;
   }
   .article h3 {
     color: red; /* Change the color to red */
     font-weight: bold; /* Make the title bold */
-    font-size: 10px;
+    font-size: 15px;
+  }
+  .article:hover {
+    background-color: #f5f5f5; /* Add a subtle background color change on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Add a slight hover shadow */
+    transform: scale(1.02); /* Increase size by 2% on hover */
   }
 }
 
