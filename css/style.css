@@ -366,6 +366,9 @@ footer p {
   .article-content p { /* Target the paragraph element within .article-content */
       display: none; /* Hide description on phones */
   }
+  .article {
+    padding: 20px; /* Increase padding for easier tapping */
+  }
   .article img {
     max-width: 165px;
   }
