@@ -28,11 +28,11 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="article.html">Articles</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="media.html">Media</a></li>
             </ul>
         </nav>
     </div>
-</header>
+  </header>
 
   <!-- Hero Section -->
   <section id="hero">
@@ -84,7 +84,7 @@
             articlesToLoad.forEach(article => {
               const articleElement = document.createElement('article');
               articleElement.innerHTML = `
-                <img src="${article.image}" alt="${article.title}">
+              <a href="${article.url}"><img src="${article.image}" alt="${article.title}"></a>
                 <h3><a href="${article.url}">${article.title}</a></h3>
                 <p>${article.description}</p>
               `;
