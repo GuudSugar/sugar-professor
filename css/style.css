@@ -358,9 +358,18 @@ footer p {
   clip-path: inset(5px 0 0 0); /* Added property */
 }
 
+
 @media (max-width: 768px) { /* Targets screens less than 768px wide */
   .article-content p { /* Target the paragraph element within .article-content */
       display: none; /* Hide description on phones */
+  }
+  .article img {
+    max-width: 160px;
+  }
+  .article h3 {
+    color: red; /* Change the color to red */
+    font-weight: bold; /* Make the title bold */
+    font-size: 10px;
   }
 }
 
