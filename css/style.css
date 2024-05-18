@@ -408,7 +408,7 @@ footer p {
 .article-content {
   flex-grow: 1;
 }
-
+/* Media*/
 #media {
   position: relative;
   overflow: hidden;
@@ -447,7 +447,7 @@ footer p {
       transition: transform 0.5s ease;
     }
     .carousel__item {
-      flex: 0 0 200px;
+      flex: 0 0 300px;
       margin-right: 10px;
       background: #f9f9f9;
       border: 1px solid #ddd;
@@ -504,7 +504,10 @@ footer p {
   color: #020202; /* Text color */
   border: 1px solid #020202; /* Border width, style, and color */
 }
-
+.video-arrow {
+  /* Adjust the top position for the arrow in the Video section */
+  top: 32%;
+}
 /* Positioning left arrow */
 .left-arrow {
   left: 0px; /* Space from left side */
@@ -512,8 +515,9 @@ footer p {
 
 /* Positioning right arrow */
 .right-arrow {
-  right: 20px; /* Space from right side */
+  right: 0px; /* Space from right side */
 }
+
     .full-screen-overlay {
       position: fixed;
       top: 0;
@@ -540,3 +544,4 @@ footer p {
       color: #fff;
       cursor: pointer;
     }
+  
