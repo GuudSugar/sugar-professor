@@ -536,6 +536,22 @@ footer p {
       max-width: 90%;
       max-height: 90%;
     }
+    /* CSS for zoom effect */
+.full-screen-overlay {
+  overflow: hidden;
+}
+
+.full-screen-overlay img {
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+  position: relative;
+}
+
+.full-screen-overlay img.zoomed {
+  cursor: grab;
+  transform: scale(2);
+}
+
     #close-overlay {
       position: absolute;
       top: 20px;
