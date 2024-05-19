@@ -536,6 +536,22 @@ footer p {
       max-width: 90%;
       max-height: 90%;
     }
+
+    @media screen and (max-width: 768px) {
+      /* Adjust video thumbnail size and position */
+      .carousel__item video {
+        width: 100%; /* Ensure video fills the container */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Prevent stretching */
+      }
+    
+      /* Adjust play button size */
+      .play-button {
+        font-size: 26px; /* Decrease font size */
+        padding: 8px; /* Adjust padding */
+        line-height: 30px;
+      }
+    }
     /* CSS for zoom effect */
 .full-screen-overlay {
   overflow: hidden;
