@@ -480,6 +480,9 @@ footer p {
       border-radius: 50%;
       cursor: pointer;
     }
+    .play-button:active {
+      transform: translate(-50%, -50%) scale(0.95); /* Reduce button size when clicked */
+    }
     /* Re-designed arrow buttons */
 .arrow {
   position: absolute;
@@ -497,12 +500,16 @@ footer p {
   text-align: center; /* Centering text horizontally */
   transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
+.arrow:active{
+  transform: translate(-1%, -50%) scale(0.95); /* Reduce button size when clicked */
+}
 
 /* Hover effect */
 .arrow:hover {
   background-color: #f3f6fa; /* Darker shade of blue */
   color: #020202; /* Text color */
-  border: 1px solid #020202; /* Border width, style, and color */
+  /*border: 1px solid #020202;*/ /* Border width, style, and color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.682); /* Add shadow effect */
 }
 .video-arrow {
   /* Adjust the top position for the arrow in the Video section */
