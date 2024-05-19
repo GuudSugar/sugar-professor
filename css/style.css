@@ -548,7 +548,7 @@ footer p {
       /* Adjust play button size */
       .play-button {
         font-size: 26px; /* Decrease font size */
-        padding: 8px; /* Adjust padding */
+        padding: 10px 10px; /* Adjust padding to increase width */
         line-height: 30px;
       }
     }
