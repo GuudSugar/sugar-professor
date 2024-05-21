@@ -39,7 +39,7 @@
     <div class="container">
       <h2>Educate yourself on all things Sugar</h2>
       <p>Your journey to a healthier life starts here</p>
-      <a href="article.html" class="btn">Read articles concerning sugar</a>
+      <a href="#featured-articles" id="scroll-to-articles" class="btn">Read articles concerning sugar</a>
     </div>
   </section>
 
@@ -65,9 +65,11 @@
       </nav>
     </div>
   </footer>
-
-  <script src="js/scripts.js"></script>
   <script>
+    document.getElementById('scroll-to-articles').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('featured-articles').scrollIntoView({ behavior: 'smooth' });
+    });
     document.addEventListener("DOMContentLoaded", function() {
       let currentPage = 1;
       const articlesPerPage = 5;
